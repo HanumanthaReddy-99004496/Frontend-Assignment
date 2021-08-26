@@ -1,0 +1,37 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+
+  }
+thead{
+    background-color: rgb(148, 175, 209);
+    font-weight: bold;
+    color:black;
+}
+  tbody{
+    overflow: scroll;
+      
+  }
+
+  .fixTableHead {
+    position: sticky;
+    top: 0px;
+  }
+  tr:hover{
+      background-color: rgb(192, 185, 185);
+      font-weight: bold;
+      color: black;
+  }
+  span:hover{
+    font-size: 20px;
+  }
