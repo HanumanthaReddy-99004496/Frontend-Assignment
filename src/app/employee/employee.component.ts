@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ServicesService } from '../services.service';
 
 
 
@@ -10,22 +11,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-  city: any;
-  name: any;
-  constructor(private http: HttpClient) {}
+
+  constructor(private services: ServicesService) {}
    apidata: any[] = [];
    columns: any[] = [];
+   name:string="";
+   age:number=0;
+   salary:number=0;
+
   ngOnInit() {
-    this.http.get("http://localhost:4200/assets/json/api.json").subscribe(fetcheddata => {
+    this.services.fetchData().subscribe(fetcheddata => {
       const entries=Object.entries(fetcheddata);
       this.apidata=entries[1][1];
       this.columns=Object.keys(entries[1][1][0]);
     });
   }
   displayStyle = "none"
-  edit(){
+  edit(row:any){
+
+    this.age=61;
+    this.name="Tiger Nixon";
+    this.salary=320800;
     this.displayStyle = "block";
-    
+
   }
   closePopup(){
     this.displayStyle = "none";

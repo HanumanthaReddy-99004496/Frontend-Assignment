@@ -5,11 +5,11 @@
   </th>
 <th>Edit</th></thead>
   <tbody>
-  <tr *ngFor = "let row of apidata">
+  <tr *ngFor = "let row of apidata" #rval>
     <td *ngFor = "let col of columns">
       {{row[col]}}
     </td>
-    <td><button class="btn btn-danger" mat-button (click)="edit()"><span  class="glyphicon glyphicon-pencil"></span></button></td>
+    <td><button class="btn btn-danger" mat-button (click)="edit(rval)"><span  class="glyphicon glyphicon-pencil"></span></button></td>
   </tr></tbody>
   </table>
 
@@ -26,28 +26,22 @@
         <h4 class="modal-title">Edit Details</h4>
       </div>
       <div class="modal-body">
-        <form>
- 
+
+        <form >
+
           <div class="form-group">
               <label >Name</label>
-              <div>
-                  <input type="text" class="form-control input-lg" name="empname" value="">
-              </div>
+              <input type="text" class="form-control input-lg" id="ename" name="ename" [(ngModel)]="name">
+              
           </div>
           <div class="form-group">
             <label >Age</label>
-            <div>
-                <input type="text" class="form-control input-lg" name="empage" value="">
-            </div>
+            <input type="text" class="form-control input-lg" id="eage"  name="eage" [(ngModel)]="age">
         </div>
         <div class="form-group">
           <label >Salary</label>
-          <div>
-              <input type="text" class="form-control input-lg" name="empsalary" value="">
-          </div>
+          <input type="text" class="form-control input-lg" id="esalary"  name="esalary" [(ngModel)]="salary">
       </div>
-          
-        
       </form>
   
       </div>
