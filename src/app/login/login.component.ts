@@ -16,11 +16,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  username:string | undefined;
-  password:string | undefined;
+  username:string ="";
+  password:string ="";
 
 submitteddata(){
-  if(this.username=='' || this.password==''){
+  if(this.username=="" || this.password==""){
     this.MyDOMElement.nativeElement.innerHTML="<strong>* fields can't be empty<strong>";
   }
   else if(this.username!='admin' || this.password!='admin'){
